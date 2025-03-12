@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    text-align: center;
+}
+
+#start-btn{
+    display: block;
+    margin: 10px auto 0px auto;
+}
+
+#header{
+    background-color: green;
+}
