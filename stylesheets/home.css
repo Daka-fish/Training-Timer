@@ -1,0 +1,24 @@
+.video-area{
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.home-text{
+    height: 378px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-video{
+    display: block;
+}
+
+.description{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 25px;
+}

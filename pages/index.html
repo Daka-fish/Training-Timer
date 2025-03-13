@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../stylesheets/main.css" />
-    <link rel="stylesheet" href="../stylesheets/main.css" />
-    <script src="../script.js"></script>
+    <link rel="stylesheet" href="../stylesheets/home.css" />
     <title>ストレッチタイマー</title>
   </head>
   <body>
 
     <header class="header">
       <nav class="nav">
-        <a id="logo" href="index.html">Flexibility Timer</a>
+        <a id="logo" href="index.html">Stretch Timer</a>
         <ul>
           <li><a class="nav-link" href="./index.html">ホーム</a></li>
           <li><a class="nav-link" href="./timer.html">タイマー</a></li>
@@ -23,17 +22,26 @@
 
     <div class="page-container">
       <section id="home">
-        <h2>ストレッチは30秒以上しないと意味がない！</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/orWHs99MvQA?si=iyrejSkgZjFgfTgd"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
+
+        <div class="video-area">
+          <div class="home-text">
+            <h2>ストレッチは30秒以上！</h2>
+          </div>
+          <iframe
+            class="youtube-video"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/orWHs99MvQA?si=iyrejSkgZjFgfTgd"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <hr>
+        <div class="description">時間を測り正しい姿勢で行いましょう</div>
       </section>
     </div>
 

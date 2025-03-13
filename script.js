@@ -22,7 +22,7 @@ function set_seconds_on_display(seconds){
 }
 
 function set_timer_background_color(colorCode){
-  let main_container = document.getElementsByClassName("main-container");
+  let main_container = document.getElementsByClassName("timer-container");
   main_container[0].style.background = colorCode;
 }
 

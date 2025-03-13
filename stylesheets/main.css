@@ -53,4 +53,6 @@
 
 .page-container{
     margin-top: 80px;
+    height: 100vh-80px;
+    padding: 0 10%;
 }
