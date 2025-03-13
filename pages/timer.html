@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+    <link rel="stylesheet" href="../stylesheets/timer.css" />
+    <script src="../script.js"></script>
+    <title>ストレッチタイマー</title>
+  </head>
+  <body>
+
+    <header class="header">
+      <nav class="nav">
+        <a id="logo" href="index.html">Flexibility Timer</a>
+        <ul>
+          <li><a class="nav-link" href="./index.html">ホーム</a></li>
+          <li><a class="nav-link" href="./timer.html">タイマー</a></li>
+          <li><a class="nav-link" href="./menu.html">ストレッチメニュー</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="timer-container">
+      <div id="timer-display">
+        <p>0 秒</p>
+      </div>
+      
+      <input type="number" id="timer-seconds" placeholder="秒数を入力" />
+
+      <div class="buttons">
+        <button id="control-btn" onclick="control_timer()">開始</button>
+        <button id="reset-btn" onclick="reset_timer()">リセット</button>
+        <button id="mute-btn" onclick="toggle_mute()">ミュートする</button>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -103,7 +103,7 @@ function start_count_down(){
       clearInterval(TIMER);
       set_seconds_on_display(0);
       set_timer_background_color("#7fffd4");
-      play_sound("sounds/finish.mp3");
+      play_sound("../sounds/finish.mp3");
       TIMER_STATE = 0;
       document.getElementById("control-btn").innerText = "開始";
       return;
@@ -111,7 +111,7 @@ function start_count_down(){
 
     if(CURRENT_TIMER_SECONDS <= 3){
       set_timer_background_color("#ffc0cb");
-      play_sound("sounds/count_down.mp3");
+      play_sound("../sounds/count_down.mp3");
     }
 
   },1000);
