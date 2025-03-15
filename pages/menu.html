@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../stylesheets/main.css" />
+    <link rel="stylesheet" href="../stylesheets/menu.css" />
+    <script src="../scripts/menu.js"></script>
     <title>ストレッチタイマー</title>
   </head>
   <body>
 
     <header class="header">
       <nav class="nav">
-        <a id="logo" href="index.html">Flexibility Timer</a>
+        <a id="logo" href="index.html">Stretch Timer</a>
         <ul>
           <li><a class="nav-link" href="./index.html">ホーム</a></li>
           <li><a class="nav-link" href="./timer.html">タイマー</a></li>
@@ -21,6 +23,21 @@
 
     <section class="page-container">
         <h2>ストレッチメニュー作成</h2>
+
+        <div id="circuit">
+
+          <div id="registered-circuits" class="circuit_component">
+            <h3>Your circutis</h3><br>
+          </div>
+
+          <div id="menu" class="circuit_component">
+            <h3>Menu</h3><br>
+            <div id="trainings"></div>
+          </div>
+          
+        </div>
+
+        <button onclick="set_circuits_on_display()">保存する</button>
     </section>
 
   </body>
