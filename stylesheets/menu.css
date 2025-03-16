@@ -46,3 +46,29 @@ h2{
     padding: 10px 0;
     background-color: #b8c8e5;
 }
+
+#trainings{
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[type="number"]{
+    width: 20px;
+}
+
+input[type="text"]{
+    width: 45%;
+}
+
+input[type="submit"]{
+    width: 20px;
+}
+
+#save-btn-div{
+    width: 100%;
+    text-align: center;
+}
+
+#save-btn{
+    width: 30%;
+}

@@ -1,7 +1,6 @@
 [
   {
     "circuit_name": "下半身ストレッチ",
-    "id": 0,
     "interval": 10,
     "trainings": [
       { "name": "ハムストリングス近位", "duration": 30 },
@@ -11,7 +10,6 @@
   },
   {
     "circuit_name": "上半身ストレッチ",
-    "id": 1,
     "interval": 15,
     "trainings": [
       { "name": "肩回し", "duration": 20 },
