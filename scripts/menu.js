@@ -67,19 +67,39 @@ function set_circuits_on_display(){
 
 function show_menus(circuit){
     let menu_html = document.getElementById("trainings");
+    let sum_duration = 0;
+    let sum_interval = circuit.interval * (circuit.trainings.length-1);
+
     menu_html.innerHTML = "";
 
     menu_html.innerHTML += `<h4>${circuit.circuit_name}</h4>`;
 
-    circuit.trainings.forEach((training, i)=>{
-        menu_html.innerHTML += `${i+1}:${training.name} ${training.duration}秒<br>`;
+    circuit.trainings.forEach(training=>{
+        menu_html.innerHTML += `<button class=\"menu-btn\" onclick=\"remove_menu(${training})\">${training.name} /${training.duration}s<br>`;
+        sum_duration += training.duration;
     });
+    sum_duration += sum_interval;
 
     menu_html.innerHTML += `<form onsubmit=\"add_menu(event,this)\">
         名前:<input type=\"text\" name=\"menu_name\">
         秒数:<input type=\"number\" name=\"menu_duration\">
         <input type=\"submit\" value=\"+\">
         </form>`;
+    
+    show_circuit_details(circuit);
+}
+
+function show_circuit_details(circuit){
+    let details_html = document.getElementById("circuit-data");
+    let sum_duration = 0;
+
+    for(let i=0; i<circuit.trainings.length; i++){
+        sum_duration += circuit.trainings[i].duration;
+    }
+    sum_duration += circuit.interval * (circuit.trainings.length-1);
+
+    details_html.innerHTML = `インターバル: ${circuit.interval}秒<br>`;
+    details_html.innerHTML += "合計:" + ((sum_duration>=60) ? `${parseInt(sum_duration/60)}分 ${sum_duration%60}秒` : `${sum_duration}秒`);
 }
 
 function add_menu(event, new_menu_html){
