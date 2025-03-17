@@ -1,4 +1,4 @@
-#circuit{
+#circuit-editer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ h2{
     text-align: center;
 }
 
-.circuit_button{
+.circuit-btn{
     background-color: white;
     border: 1px solid black;
     padding: 5px 10px;
@@ -47,27 +47,15 @@ h2{
     background-color: #b8c8e5;
 }
 
-#trainings{
+#training-menus{
     width: 90%;
     margin: 0 auto;
     text-align: center;
 }
 
-#trainings h4{
+#stretch-menus h4{
     text-align: center;
     margin-bottom: 5px;
-}
-
-input[type="number"]{
-    width: 20px;
-}
-
-input[type="text"]{
-    width: 45%;
-}
-
-input[type="submit"]{
-    width: 20px;
 }
 
 #save-btn-div{
@@ -91,4 +79,24 @@ input[type="submit"]{
 #circuit-data{
     width: 90%;
     padding: 10px 15px;
+}
+
+#add-menu-form{
+    display: flex;
+    gap: 5px;
+    width: 90%;
+    margin: 10px auto 0 auto;
+}
+
+#add-menu-form input[type="text"]{
+    padding: 5px 0;
+    width: 70%;
+}
+
+#add-menu-form input[type="number"]{
+    width: 35px;
+}
+
+#add-menu-form input[type="number"]:hover{
+    width: 30px;
 }

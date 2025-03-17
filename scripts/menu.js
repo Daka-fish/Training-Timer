@@ -42,14 +42,16 @@ async function get_circuits_from_json() {
 
 function set_circuits_on_display(){
     if(DATA_FROM_JSON.length == 0) return;
+
     let circuits_display_html = document.getElementById("registered-circuits")
     let registered_circuits = DATA_FROM_JSON;
+
     registered_circuits.forEach(circuit => {
         let button = document.createElement("button");
         let circuit_name = circuit.circuit_name;
 
         button.innerText = circuit_name;
-        button.className = "circuit_button";
+        button.className = "circuit-btn";
         button.onclick = () => {
             show_menus(circuit);
             EDITTED_CIRCUIT = circuit;
@@ -59,14 +61,11 @@ function set_circuits_on_display(){
         circuits_display_html.appendChild(document.createElement("br"));
     });
 
-    let new_circuit_button = document.createElement("button");
-    new_circuit_button.innerText = "新規作成";
-    new_circuit_button.className = "circuit_button";
-    circuits_display_html.appendChild(new_circuit_button);
+    circuits_display_html.appendChild(get_create_circuit_button());
 }
 
 function show_menus(circuit){
-    let menu_html = document.getElementById("trainings");
+    let menu_html = document.getElementById("training-menus");
     let sum_duration = 0;
     let sum_interval = circuit.interval * (circuit.trainings.length-1);
 
@@ -74,17 +73,13 @@ function show_menus(circuit){
 
     menu_html.innerHTML += `<h4>${circuit.circuit_name}</h4>`;
 
-    circuit.trainings.forEach(training=>{
-        menu_html.innerHTML += `<button class=\"menu-btn\" onclick=\"remove_menu(${training})\">${training.name} /${training.duration}s<br>`;
-        sum_duration += training.duration;
+    circuit.trainings.forEach(menu=>{
+        menu_html.appendChild(get_menu_button(menu));
+        sum_duration += menu.duration;
     });
     sum_duration += sum_interval;
 
-    menu_html.innerHTML += `<form onsubmit=\"add_menu(event,this)\">
-        名前:<input type=\"text\" name=\"menu_name\">
-        秒数:<input type=\"number\" name=\"menu_duration\">
-        <input type=\"submit\" value=\"+\">
-        </form>`;
+    menu_html.appendChild(get_add_form());
     
     show_circuit_details(circuit);
 }
@@ -111,4 +106,46 @@ function add_menu(event, new_menu_html){
     let traing = {name,duration};
     EDITTED_CIRCUIT.trainings.push(traing);
     show_menus(EDITTED_CIRCUIT);
+}
+
+function get_create_circuit_button(){
+    let button = document.createElement("button");
+    button.innerText = "新規作成";
+    button.className = "circuit-btn";
+    button.onclick = () =>{console.log("make new circuit");};
+    return button;
+}
+
+function get_menu_button(menu){
+    let button = document.createElement("button");
+    button.innerText=menu.name;
+    button.className="menu-btn";
+    button.onclick = () =>{console.log("menu button pushed:"+menu.name);};
+    return button;
+}
+
+function get_add_form(){
+    let form = document.createElement("form");
+    form.onsubmit = () => {add_menu(event,this)};
+    form.id="add-menu-form";
+
+    let name_input = document.createElement("input");
+    let duration_input = document.createElement("input");
+    let submit = document.createElement("input");
+
+    name_input.type="text";
+    name_input.name="menu_name";
+    name_input.placeholder="名前";
+
+    duration_input.type="number";
+    duration_input.name="menu_duration";
+    duration_input.placeholder="秒数";
+
+    submit.type="submit";
+    submit.value=" + ";
+
+    form.appendChild(name_input);
+    form.appendChild(duration_input);
+    form.appendChild(submit);
+    return form;
 }
